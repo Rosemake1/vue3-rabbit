@@ -14,3 +14,9 @@ export const findNewAPI=()=>{
             url:'home/new'
         })
 }
+
+export const  getHotAPI=()=>{
+    return httpInstace({
+        url:'home/hot'
+    })
+}
