@@ -14,33 +14,28 @@ onMounted(()=>{
 </script>
 
 <template>
-    
-    <HomePanel title="人气推荐" subTitle="人气爆款，不容错过">
-
-  <ul class="goods-list">
-    <li v-for="item in hotList" :key="item.id">
-      <RouterLink to="/">
-        <img v-img-lazy="item.picture"  alt="" />
-        <p class="name">{{ item.name }}</p>
-        <p class="price">&yen;{{ item.price }}</p>
-      </RouterLink>
-    </li>
-  </ul>
-</HomePanel>
+  <HomePanel title="人气推荐" sub-title="人气爆款 不容错过">
+      <ul class="goods-list">
+        <li v-for="item in hotList" :key="item.id">
+          <RouterLink to="/">
+            <img v-img-lazy="item.picture" alt="">
+            <p class="name">{{ item.title }}</p>
+            <p class="desc">{{ item.alt }}</p>
+          </RouterLink>
+        </li>
+      </ul>
+  </HomePanel>
 </template>
-
 
 <style scoped lang='scss'>
 .goods-list {
   display: flex;
   justify-content: space-between;
-  height: 406px;
+  height: 426px;
 
   li {
     width: 306px;
     height: 406px;
-
-    background: #f0f9f4;
     transition: all .5s;
 
     &:hover {
@@ -57,13 +52,11 @@ onMounted(()=>{
       font-size: 22px;
       padding-top: 12px;
       text-align: center;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
     }
 
-    .price {
-      color: $priceColor;
+    .desc {
+      color: #999;
+      font-size: 18px;
     }
   }
 }

@@ -1,6 +1,7 @@
 import httpInstace from "@/utils/http";
 
 
+
 //获取banner
 export function getBannerAPI(){
     return  httpInstace({
@@ -18,5 +19,11 @@ export const findNewAPI=()=>{
 export const  getHotAPI=()=>{
     return httpInstace({
         url:'home/hot'
+    })
+}
+
+export const getGoodsAPI=()=>{
+    return httpInstace({
+        url:'home/goods'
     })
 }
